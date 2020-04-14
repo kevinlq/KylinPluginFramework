@@ -161,11 +161,14 @@ bool Kpf::KpfCoreImpl::init(int argc, char *argv[])
         if (!loadAppConfig(FILE_APP)) {
             return false;
         }
+
         qApp->setObjectName(qApp->metaObject()->className());
+
         QString appName = rootNode.attribute(KEY_NAME, qApp->applicationDisplayName());
         if (appName.isEmpty()) {
             appName = QFileInfo(qApp->applicationFilePath()).completeBaseName();
         }
+
         qApp->setApplicationDisplayName(appName);
         QDir dir(qApp->applicationDirPath());
         dir.cd(DIR_STYLESHEETS);

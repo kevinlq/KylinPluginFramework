@@ -57,6 +57,7 @@ template<typename T>
 NotifyManager<T>::~NotifyManager()
 {
     qDeleteAll(notifiers);
+    notifiers.clear();
 }
 
 template<typename T>
