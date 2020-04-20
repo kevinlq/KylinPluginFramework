@@ -10,12 +10,14 @@
 #  define KIMAGEVIEW_EXPORT Q_DECL_IMPORT
 #endif
 
-class KIMAGEVIEW_EXPORT KImageView : public QObject
+class KIMAGEVIEW_EXPORT KImageView : public QWidget
 {
     Q_OBJECT
 public:
-    KImageView(QObject*parent = 0);
+    KImageView(QWidget*parent = 0);
     ~KImageView();
+
+    Q_SLOT bool init(const QDomElement& config);
 
 public Q_SLOTS:
     void logInfoOut();

@@ -3,6 +3,7 @@
 
 Test::Test(QObject *parent) : QObject(parent)
 {
+    qWarning () << "#Test constroct";
 }
 
 Test::~Test()
@@ -37,7 +38,6 @@ void Test::start()
 
 void Test::testSlot(quint32 value)
 {
-    return;
     qInfo() << "Test: testSlot() received with arg =" << value
             << ", at thread" << QThread::currentThread()
             << ", it's belonging thread is" << thread()
